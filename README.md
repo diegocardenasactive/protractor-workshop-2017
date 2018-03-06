@@ -1,2 +1,2 @@
 # protractor-workshop-2017
-Taller de configuración y aprendizaje de angular
+Capacitación en el montaje de nodejs y el manejo de github
