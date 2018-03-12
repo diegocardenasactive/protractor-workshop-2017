@@ -1,8 +1,9 @@
-import {browser} from 'protractor';
+
+import { browser } from 'protractor';
 
 describe('Given a SDET learning protractor', () => {
 	describe('when open google page', () => {
-		beforeEach(() => {
+		beforeEach(async() => {
 			browser.get('http://www.google.com'); 	
 		});
 		
