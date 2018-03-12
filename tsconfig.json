@@ -7,9 +7,9 @@
 		"moduleResolution": "node",
 		"types":[
 			"jasmine",
-			"jaminewd2"
+			"jasminewd2"
 		],
 		"noUnusedParameters": true,
-		"noUsusedLocals": true
+		"noUnusedLocals": true
 	}
 }
