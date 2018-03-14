@@ -1,9 +1,5 @@
 import { browser, Config } from 'protractor';
-<<<<<<< HEAD
 import { reporter } from​ './helpers/reporter';
-=======
-import {reporter } from './helpers/reporter';
->>>>>>> master
 
 export const config: Config = {
 	framework: 'jasmine',
