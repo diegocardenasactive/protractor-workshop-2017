@@ -11,6 +11,9 @@
 		],
 		"noUnusedParameters": true,
 		"noUnusedLocals": true
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 	}
 }
