@@ -4,8 +4,7 @@
   "description": "this is a workshop about protractor",
   "main": "index.js",
   "scripts": {
-    "pruebasubida": "creacion",
-    "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update --gecko false",
+    "postinstall": "webdriver-manager update --gecko false",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "build": "tsc",
