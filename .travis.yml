@@ -1,11 +1,14 @@
 language: node_js
-cache:
- directories:
-  - node_modules
 notifications:
   email: false
 node_js:
-  - 'stable'
+ - '8.0'
+ - '8.1'
+ - '8.2'
+ - '9.0'
 branches:
  except:
   - /^v\d+\.\d+\.\d+$/
+before_script:
+ - chmod 0777 ./node_modules/.bin/tsc
+ - chmod 0777 ./node_modules/.bin/protractor
