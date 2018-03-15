@@ -4,6 +4,7 @@
   "description": "this is a workshop about protractor",
   "main": "index.js",
   "scripts": {
+    "preprotractor": "webdriver-manager update --standalone --versions.standalone 2.53.1",
     "postinstall": "webdriver-manager update --gecko false",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
