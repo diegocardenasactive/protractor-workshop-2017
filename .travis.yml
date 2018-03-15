@@ -5,10 +5,12 @@ cache:
 notifications:
   email: false
 node_js:
+ - '8.0'
  - '8.1'
+ - '9.0'
 branches:
  except:
   - /^v\d+\.\d+\.\d+$/
 before_script:
- - chmod 0777 ./node_modules/.bin/tsc
- - chmod 0777 ./node_modules/.bin/protractor
+ - ./node_modules/.bin/tsc
+ - ./node_modules/.bin/protractor
