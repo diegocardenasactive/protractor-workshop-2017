@@ -1,4 +1,4 @@
-export​ { MenuContentPage } from​ './menucontent.page';
+export​ { MenuContentPage } from​ './MenuContent.page';
 export​ { AddressStepPage } from​ './AddressStep.page';
 export​ { BankPayment } from​ './BankPayment.page';
 export​ { OrderResume } from​ './OrderResume.page';
