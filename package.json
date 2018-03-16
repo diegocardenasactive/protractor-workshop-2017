@@ -8,9 +8,10 @@
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "build": "tsc",
-	  "test:local": "npm run build && protractor dist/protractor/config.js",
-	  "test:headless": "npm run build && protractor dist/protractor/headless.config.js",
-	  "test": "npm run test:headless"
+    "test:local": "npm run build && protractor dist/protractor/config.js",
+    "test:headless": "npm run build && protractor dist/protractor/headless.config.js",
+    "test": "npm run test:headless",
+    "lint": "tslint --type-check --project tsconfig.json protractor/**/*.ts test/**/*.ts src/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -29,10 +30,12 @@
   },
   "homepage": "https://github.com/diegocardenasactive/protractor-workshop-2017#readme",
   "dependencies": {
-    "protractor": "^5.3.0"
+    "protractor": "^5.3.0",
+    "tslint-config-airbnb": "^5.7.0"
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.3",
+    "eslint": "^4.18.2",
     "jasmine-spec-reporter": "^4.2.1",
     "typescript": "^2.7.2"
   }
