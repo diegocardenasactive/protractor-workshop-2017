@@ -1,12 +1,15 @@
-import​ { $, ElementFinder, promise } from​ 'protractor';
+import​ { $, ElementFinder, promise/*, browser, ProtractorExpectedConditions */} from​ 'protractor';
+
+//const EC : ProtractorExpectedConditions = new ProtractorExpectedConditions(browser);
 
 export​ class​ ProductDetail {
     
-    private​ get​ tShirtImage(): ElementFinder {
-        return​ $('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img');
+    private​ get​ tShirtAddToCart(): ElementFinder {
+        return​ $('#add_to_cart > button > span');
     }
     
-    public​ goToTShirtImage(): promise.Promise<void> {
-        return​ this​.tShirtImage.click();
+    public​ addToCart(): promise.Promise<void> {
+        //browser.wait(EC.elementToBeClickable(this.tShirtAddToCart), 5000);
+        return​ this​.tShirtAddToCart.click();
     }
 }

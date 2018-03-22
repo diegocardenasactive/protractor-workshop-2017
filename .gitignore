@@ -94,4 +94,7 @@ $RECYCLE.BIN/
 ## Typescript
 dist
 
+## Jasmine-awesome-reports
+reports
+
 # End of https://www.gitignore.io/api/node,windows,visualstudiocode

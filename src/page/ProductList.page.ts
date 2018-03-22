@@ -1,4 +1,6 @@
-import​ { $, ElementFinder, promise } from​ 'protractor';
+import​ { $, ElementFinder, promise/*, browser, ProtractorExpectedConditions */} from​ 'protractor';
+
+//const EC : ProtractorExpectedConditions = new ProtractorExpectedConditions(browser);
 
 export​ class​ ProductList {
     
@@ -6,7 +8,8 @@ export​ class​ ProductList {
         return​ $('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img');
     }
     
-    public​ goToTShirtImage(): promise.Promise<void> {
+    public​ goToTShirtDetail(): promise.Promise<void> {
+        //browser.wait(EC.visibilityOf(this.tShirtImage), 5000);
         return​ this​.tShirtImage.click();
     }
 }

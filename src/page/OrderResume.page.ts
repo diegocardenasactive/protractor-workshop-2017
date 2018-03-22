@@ -1,12 +1,17 @@
-import​ { $, ElementFinder, promise } from​ 'protractor';
+import​ { $, ElementFinder, promise, /*browser, ProtractorExpectedConditions*/ } from​ 'protractor';
+
+//const EC : ProtractorExpectedConditions = new ProtractorExpectedConditions(browser);
 
 export​ class​ OrderResume {
     
-    private​ get​ tShirtImage(): ElementFinder {
-        return​ $('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img');
+    messageSuccessful: string = '';
+
+    private​ get​ showInformationOrderConfirmation(): ElementFinder {
+        return​ $('#center_column > div > p > strong');
     }
     
-    public​ goToTShirtImage(): promise.Promise<void> {
-        return​ this​.tShirtImage.click();
+    public​ orderResume(): promise.Promise<string> {
+        //browser.wait(EC.visibilityOf(this​.showInformationOrderConfirmation), 5000);
+        return​ this​.showInformationOrderConfirmation.getText();
     }
 }

@@ -1,12 +1,16 @@
-import​ { $, ElementFinder, promise } from​ 'protractor';
+import​ { $, ElementFinder, promise /*, browser, ProtractorExpectedConditions*/} from​ 'protractor';
+
+//const EC : ProtractorExpectedConditions = new ProtractorExpectedConditions(browser);
 
 export​ class​ MenuContentPage {
      
-    private​ get​ tShirtMenu(): ElementFinder {
+    public get​ tShirtMenu(): ElementFinder {
         return​ $('#block_top_menu > ul > li:nth-child(3) > a');
     }
 
     public​ goToTShirtMenu(): promise.Promise<void> {
-        return​ this​.tShirtMenu.click();
+        //browser.wait(EC.elementToBeClickable(this.tShirtMenu), 5000);
+        return​ this.tShirtMenu.click();
     }
+
 }
