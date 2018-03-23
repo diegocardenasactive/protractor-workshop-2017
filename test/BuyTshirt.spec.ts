@@ -31,10 +31,11 @@ describe('Buy a t-shirt', () => {
     it('then should be bought a t-shirt', async​ () => {
 
         await​ browser.get('http://automationpractice.com/');
-        browser.wait(EC.elementToBeClickable($('#block_top_menu > ul > li:nth-child(3) > a')));
+        //browser.wait(EC.elementToBeClickable($('#block_top_menu > ul > li:nth-child(3) > a')));
         await menuContentPage.goToTShirtMenu(); 
         await browser.wait(EC.visibilityOf($('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img')), 5000);
-        await productList.goToTShirtDetail();
+        //await productList.goToTShirtDetail();
+        await productList.selectProduct('Faded Short Sleeve T-shirts');
 
         await browser.wait(EC.elementToBeClickable($('#add_to_cart > button > span')), 5000);
         await productDetail.addToCart();
