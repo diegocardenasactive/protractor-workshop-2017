@@ -11,7 +11,8 @@
     "build": "tsc",
     "test:local": "npm run build && protractor dist/protractor/config.js",
     "test:headless": "npm run build && protractor dist/protractor/headless.config.js",
-    "test": "npm run test:headless"
+    "test": "npm run test:headless",
+    "test1": "npm run test:local"
   },
   "repository": {
     "type": "git",

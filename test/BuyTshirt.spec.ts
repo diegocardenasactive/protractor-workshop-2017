@@ -1,4 +1,4 @@
-import​ {  $,   browser, ProtractorExpectedConditions } from​ 'protractor';
+import​ { $, browser/*, ProtractorExpectedConditions*/, ExpectedConditions } from​ 'protractor';
 import​ { MenuContentPage } from​ '../src/page';
 import { AddressStepPage } from '../src/page';
 import { BankPayment } from '../src/page';
@@ -11,7 +11,9 @@ import { ShippingStep } from '../src/page';
 import { SignInStep } from '../src/page';
 import { SummaryStep } from '../src/page';
 
-const EC : ProtractorExpectedConditions = new ProtractorExpectedConditions(browser);
+//const EC : ProtractorExpectedConditions = new ProtractorExpectedConditions(browser);
+
+const EC = ExpectedConditions;
 
 describe('Buy a t-shirt', () => {
     const​ menuContentPage: MenuContentPage = new​ MenuContentPage();
@@ -29,24 +31,24 @@ describe('Buy a t-shirt', () => {
     it('then should be bought a t-shirt', async​ () => {
 
         await​ browser.get('http://automationpractice.com/');
-        //browser.wait(EC.elementToBeClickable($('#block_top_menu > ul > li:nth-child(3) > a')),5000);
+        browser.wait(EC.elementToBeClickable($('#block_top_menu > ul > li:nth-child(3) > a')));
         await menuContentPage.goToTShirtMenu(); 
-        browser.wait(EC.visibilityOf($('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img')),5000);
+        await browser.wait(EC.visibilityOf($('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img')), 5000);
         await productList.goToTShirtDetail();
 
-        browser.wait(EC.elementToBeClickable($('#add_to_cart > button > span')), 5000);
+        await browser.wait(EC.elementToBeClickable($('#add_to_cart > button > span')), 5000);
         await productDetail.addToCart();
 
-        browser.wait(EC.visibilityOf($('#layer_cart .button-container > a')), 5000);
-        browser.wait(EC.elementToBeClickable($('#layer_cart .button-container > a')), 5000);
+        await browser.wait(EC.visibilityOf($('#layer_cart .button-container > a')), 5000);
+        await browser.wait(EC.elementToBeClickable($('#layer_cart .button-container > a')), 5000);
         await productAddedModal.proceedCheckout();
 
-        browser.wait(EC.elementToBeClickable($('.cart_navigation span')),5000);
+        browser.wait(EC.elementToBeClickable($('.cart_navigation span')));
         await summaryStep.sumaryProceedCheckout();
 
-        //await browser.wait(EC.visibilityOf(this.inputEmail),5000);
+        await browser.wait(EC.elementToBeClickable($('#email')), 5000);
         await signInStep.setEmail();
-        //await browser.wait(EC.visibilityOf(this.inputPassword),5000);
+        await browser.wait(EC.elementToBeClickable($('#passwd')), 5000);
         await signInStep.setPassword();
         //await browser.wait(EC.elementToBeClickable(this​.submitLogin),5000);
         await signInStep.signInAccount();
