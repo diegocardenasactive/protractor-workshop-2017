@@ -9,4 +9,5 @@ export​ { ProductList } from​ './ProductList.page';
 export​ { ShippingStep } from​ './ShippingStep.page';
 export​ { SignInStep } from​ './SignInStep.page';
 export​ { SummaryStep } from​ './SummaryStep.page';
-export​ { PersonalInformation } from​ './PersonalInformation.page';
+export​ { PersonalInformationPage } from​ './PersonalInformation.page';
+export​ { IFramePage } from​ './IFrame.page';

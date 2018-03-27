@@ -12,3 +12,5 @@ addons:
   chrome: stable
 before_install:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  travis encrypt SAUCE_USERNAME=DIEGOCARDENAS --add
+  travis encrypt SAUCE_ACCESS_KEY=a5085cc8-9fc5-4856-a2d4-bc12e86e6664 --add

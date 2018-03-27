@@ -1,18 +1,18 @@
-import​ { $, browser/*, ProtractorExpectedConditions*/, ExpectedConditions } from​ 'protractor';
+import​ { browser/*, ProtractorExpectedConditions*/} from​ 'protractor';
 
-import { PersonalInformation } from​ '../src/page';
+import { PersonalInformationPage } from​ '../src/page';
+import { DownloadService } from '../src/service/Download.service';
 
+describe ('Llenar formulario', async () => {
 
-describe ('Llenar formulario', () => {
-
-    const personalInformationPage : PersonalInformation = new PersonalInformation();
+    const personalInformationPage : PersonalInformationPage = new PersonalInformationPage();
 
     it('Practice Automation Form', async () => {
         await browser.get('http://toolsqa.com/automation-practice-form/');
 
-        await​ personalInformationPage.fillForm({
-            firstName: 'Alejandro',
-            lastName: 'Perdomo',
+        await personalInformationPage.fillForm({
+            firstName: 'Diego',
+            lastName: 'Cardenas',
             sex: 'Male',
             experience: 7,
             profession: ['Automation Tester'],
@@ -24,7 +24,19 @@ describe ('Llenar formulario', () => {
                 'Switch Commands',
                 'Wait Commands',
                 'WebElement Commands'
-            ]
-            });
-    })
+            ],
+            file: './resources/descarga.jpg',
+            downloadFile: true
+        });
+    });
+
+    it('Cargar el archivo al servidor', async () => {
+        expect(await personalInformationPage.getFilename()).toBe('descarga.jpg');
+    });
+
+    it('then should be created a file', async () => {
+        const service = new DownloadService();
+        const file = await service.readFileFromTemp('test-document.xlsx');
+        expect(file.byteLength).toBeGreaterThanOrEqual(8000);
+    });
 })

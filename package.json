@@ -11,8 +11,8 @@
     "build": "tsc",
     "test:local": "npm run build && protractor dist/protractor/config.js",
     "test:headless": "npm run build && protractor dist/protractor/headless.config.js",
-    "test": "npm run test:headless",
-    "test1": "npm run test:local"
+    "test:saucelabs": "npm run build && protractor dist/protractor/saucelabs.config.js",
+    "test": "npm run test:saucelabs"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.3",
+    "cross-env": "^5.1.4",
     "eslint": "^4.18.2",
     "jasmine-awesome-report": "0.0.3",
     "jasmine-spec-reporter": "^4.2.1",
