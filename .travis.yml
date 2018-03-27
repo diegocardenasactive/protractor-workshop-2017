@@ -10,5 +10,8 @@ sudo: required
 dist: trusty
 addons:
   chrome: stable
+  sauce_connect:
+    username: "DIEGOCARDENAS"
+    access_key: "a5085cc8-9fc5-4856-a2d4-bc12e86e6664"
 before_install:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
